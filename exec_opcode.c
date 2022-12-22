@@ -1,11 +1,18 @@
 #include "monty.h"
 
+ /**
+ * exec_opcode - run opcode
+ * @opcode: functions
+ * @stack: structure of stack
+ * @line_number: number of lines read
+ */
+
 void exec_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 {
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
- 		{"pint", pint},
+		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
@@ -13,13 +20,14 @@ void exec_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 		{"nop", nop},
 		{NULL, NULL}
 	};
-    	int i;
+
+	int i;
 
 	for (i = 0; opcodes[i].opcode != NULL; i++)
 	{
 		if (!strcmp(opcode, opcodes[i].opcode))
-        	{
-            		opcodes[i].f(stack, line_number);
+		{
+			opcodes[i].f(stack, line_number);
 			break;
 		}
 	}
