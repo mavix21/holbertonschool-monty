@@ -1,4 +1,11 @@
 #include "monty.h"
+
+/**
+ * add - adds top of stack and second top of stack
+ * @stack: pointer to linked list stack
+ * @line_number: number of line opcode occurs on
+ */
+
 void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
@@ -25,7 +32,11 @@ void add(stack_t **stack, unsigned int line_number)
 	*stack = new_node;
 	free_stack(&top);
 }
-
+/**
+ * sub - subtracts top of stack and second top of stack
+ * @stack: pointer to linked list stack
+ * @line_number: number of line opcode occurs on
+ */
 void sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
@@ -35,6 +46,7 @@ void sub(stack_t **stack, unsigned int line_number)
 		panic("can't sub, stack too short", line_number);
 
 	new_node = malloc(sizeof(stack_t));
+
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -42,7 +54,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	}
 
 	top = *stack;
-	new_node->n =(top->next)->n - top->n;
+	new_node->n = (top->next)->n - top->n;
 	new_node->prev = NULL;
 	new_node->next = (top->next)->next;
 	if ((top->next)->next != NULL)
@@ -52,7 +64,11 @@ void sub(stack_t **stack, unsigned int line_number)
 	*stack = new_node;
 	free_stack(&top);
 }
-
+/**
+ * nop - literally does nothing
+ * @stack: pointer to the top of the stack
+ * @line_number: the index of the current line
+ */
 void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
