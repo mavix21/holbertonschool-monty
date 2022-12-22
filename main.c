@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     FILE *fp = NULL;
     char *opcode = NULL;
     int line_number;
-    stack_t **stack;
+    stack_t *stack = NULL;
 
     if (argc < 2)
     {
@@ -33,9 +33,10 @@ int main(int argc, char *argv[])
             continue;
         }
         arg_str = strtok(NULL, " \n");
-        exec_opcode(opcode, stack, line_number);
+        exec_opcode(opcode, &stack, line_number);
         line_number++;
     }
+    free_stack(&stack);
 
     return (EXIT_SUCCESS);
 }
