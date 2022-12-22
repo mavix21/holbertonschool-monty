@@ -38,5 +38,6 @@ For this project the secondary code files are the following:
 | nop | doesn't do anything |
 
 ### Authors
-[Marcelo Vizcarra](https://github.com/mavix21)
-[Alex Nuñez](https://github.com/AlExito745)
+* [Marcelo Vizcarra](https://github.com/mavix21)
+
+* [Alex Nuñez](https://github.com/AlExito745)
