@@ -5,7 +5,7 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *new_node;
 	int arg;
 
-	if (arg_str == NULL) //|| !is_numeric(arg_str))
+	if (arg_str == NULL || !is_numeric(arg_str))
 	{
 		free_stack(stack);
 		panic("usage: push integer", line_number);
