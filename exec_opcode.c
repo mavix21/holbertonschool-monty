@@ -20,6 +20,7 @@ void exec_opcode(char *opcode, stack_t **stack, unsigned int line_number)
         if (!strcmp(opcode, opcodes[i].opcode))
         {
             opcodes[i].f(stack, line_number);
+            break;
         }
     }
 }
