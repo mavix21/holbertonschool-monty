@@ -4,13 +4,13 @@ void exec_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 {
     instruction_t opcodes[] = {
         {"push", push},
-        {"pall", push},
-        {"pint", push},
-        {"pop", push},
-        {"swap", push},
-        {"add", push},
-        {"sub", push},
-        {"nop", push},
+        {"pall", pall},
+        {"pint", pint},
+        {"pop", pop},
+        {"swap", swap},
+        {"add", add},
+        {"sub", sub},
+        {"nop", nop},
         {NULL, NULL}
     };
     int i;
