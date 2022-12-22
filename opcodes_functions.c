@@ -7,7 +7,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (arg_str == NULL) //|| !is_numeric(arg_str))
 	{
-		panic("usage:push integer", line_number);
+		panic("usage: push integer", line_number);
 	}
 
 	arg = atoi(arg_str);
