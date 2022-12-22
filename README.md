@@ -27,7 +27,7 @@ In this case they are the following:
 For this project the secondary code files are the following:
 
 | OPCODE | DESCRIPTION |
-| :---: | :---:|
+| :---: | :---|
 | push | pushes value to stack |
 | pall | prints everything on the stack LIFO |
 | pint | prints the top value of the stack |
@@ -38,9 +38,5 @@ For this project the secondary code files are the following:
 | nop | doesn't do anything |
 
 ### Authors
-Marcelo Vizcarra
-
-Alex Nuñez
-
-
-
+[Marcelo Vizcarra](https://github.com/mavix21)
+[Alex Nuñez](https://github.com/AlExito745)
