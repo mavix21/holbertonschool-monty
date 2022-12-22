@@ -36,6 +36,8 @@ int main(int argc, char *argv[])
         exec_opcode(opcode, &stack, line_number);
         line_number++;
     }
+
+    fclose(fp);
     free_stack(&stack);
 
     return (EXIT_SUCCESS);
