@@ -82,6 +82,7 @@ void swap(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
+		free_stack(stack);
 		panic("can't swap, stack too short", line_number);
 	}
 
