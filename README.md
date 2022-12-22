@@ -37,7 +37,10 @@ For this project the secondary code files are the following:
 | sub | subtracs the top element of the stack from the second top elelement of the stack |
 | nop | doesn't do anything |
 
+### Authors
+Marcelo Vizcarra
 
+Alex Nuñez
 
 
 
