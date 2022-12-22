@@ -31,4 +31,4 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-#endif /* end of MONTY_H*/
+#endif /* end of MONTY_H */
