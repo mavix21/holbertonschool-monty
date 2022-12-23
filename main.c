@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	{
 		opcode = strtok(buf, " \n");
 
-		if (opcode == NULL)
+		if (opcode == NULL || *opcode == '#')
 		{
 			line_number++;
 			continue;
