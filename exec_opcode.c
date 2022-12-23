@@ -21,9 +21,9 @@ void exec_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 		{"nop", nop},
 		{"div", div_stack},
 		{"mul", mul_stack},
+		{"mod", mod_stack},
 		{NULL, NULL}
 	};
-
 	int i;
 
 	for (i = 0; opcodes[i].opcode != NULL; i++)
