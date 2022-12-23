@@ -37,9 +37,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void exec_opcode(char *, stack_t **, unsigned int);
+void exec_opcode(char *opcode, stack_t **stack, unsigned int line_number);
 
-/* Opcode Functions */
+/* Opcodes */
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
@@ -55,4 +55,4 @@ void free_stack(stack_t **stack);
 void free_stack_recursive(stack_t *top);
 int is_numeric(char *s);
 
-#endif /* end of MONTY_H */
+#endif /* end of MONTY_H*/
