@@ -89,7 +89,7 @@ void div_stack(stack_t **stack, unsigned int line_number)
 	stack_t *top;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		panic("can't sub, stack too short", line_number);
+		panic("can't div, stack too short", line_number);
 
 	new_node = malloc(sizeof(stack_t));
 
