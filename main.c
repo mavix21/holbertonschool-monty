@@ -1,12 +1,13 @@
 #include "monty.h"
 
+char *arg_str = NULL;
+
 /**
  * main - driver function for monty program
  * @argc: int num of arguments
  * @argv: opcode file
  * Return: 0
 */
-
 int main(int argc, char *argv[])
 {
 	char buf[1024] = {0};
