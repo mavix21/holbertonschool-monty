@@ -57,3 +57,34 @@ void pchar_stack(stack_t **stack, unsigned int line_number)
 
 	printf("%c\n", top_char);
 }
+
+/**
+ * pstr_stack - prints the string starting at the top of the stack
+ * followed by a new line
+ * @stack: pointer to linked list stack
+ * @line_number: number of line opcode occurs on
+ */
+void pstr_stack(stack_t **stack, unsigned int line_number)
+{
+	stack_t *top;
+
+	if (*stack == NULL)
+	{
+		printf("\n");
+		return;
+	}
+
+	top = *stack;
+	while (top != NULL)
+	{
+		if (top->n <= 0 || top->n > 127)
+		{
+			printf("\n");
+			return;
+		}
+
+		printf("%c", top->n);
+		top = top->next;
+	}
+	printf("\n");
+}
