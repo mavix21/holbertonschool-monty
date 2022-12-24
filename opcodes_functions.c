@@ -5,7 +5,6 @@
  * @stack: linked lists for monty stack
  * @line_number: number of line opcode occurs on
  */
-
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
@@ -34,6 +33,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	*stack = new_node;
 }
+
 /**
  * pall - print all function
  * @stack: pointer to linked list stack
@@ -54,6 +54,7 @@ void pall(stack_t **stack, unsigned int line_number)
 		top = top->next;
 	}
 }
+
 /**
  * pint - print int a top of stack
  * @stack: pointer to linked list stack
@@ -68,6 +69,7 @@ void pint(stack_t **stack, unsigned int line_number)
 
 	printf("%d\n", (*stack)->n);
 }
+
 /**
  * pop - delete item at top of stack
  * @stack: pointer to linked list stack
@@ -92,6 +94,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	free(top_element);
 }
+
 /**
  * swap - swap top of stack and second top of stack
  * @stack: pointer to linked list stack
