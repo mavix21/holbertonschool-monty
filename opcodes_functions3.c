@@ -101,6 +101,7 @@ void rotl_stack(stack_t **stack, unsigned int line_number)
 {
 	stack_t *last;
 	stack_t *top;
+	(void)line_number;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return;
