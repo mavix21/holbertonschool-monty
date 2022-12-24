@@ -67,6 +67,7 @@ void pchar_stack(stack_t **stack, unsigned int line_number)
 void pstr_stack(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top;
+	(void)line_number;
 
 	if (*stack == NULL)
 	{
