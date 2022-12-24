@@ -1,6 +1,6 @@
 #include "monty.h"
 
-char *arg_str = NULL;
+info_t info = { NULL, NULL, LIFO };
 
 /**
  * main - driver function for monty program
