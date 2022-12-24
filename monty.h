@@ -5,7 +5,23 @@
 #include <stdio.h>
 #include <string.h>
 
-extern char *arg_str;
+#define LIFO 0
+#define FIFO 1
+
+/**
+ * struct info_s - program info structure
+ * @arg_str: element to be added to the data structure
+ * @fp: file pointer to monty file
+ * @data_format: LIFO or FIFO
+ */
+typedef struct info_s
+{
+	char *arg_str;
+	FILE *fp;
+	int data_format;
+} info_t;
+
+extern info_t info;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
