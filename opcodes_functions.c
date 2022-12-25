@@ -10,17 +10,18 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *new_node;
 	int arg;
 
-	if (arg_str == NULL || !is_numeric(arg_str))
+	if (info.arg_str == NULL || !is_numeric(info.arg_str))
 	{
 		free_stack(stack);
 		panic("usage: push integer", line_number);
 	}
 
-	arg = atoi(arg_str);
+	arg = atoi(info.arg_str);
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
 		free_stack(stack);
+		fclose(info.fp);
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
@@ -64,6 +65,7 @@ void pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
 	{
+		free_stack(stack);
 		panic("can't pint, stack empty", line_number);
 	}
 
@@ -81,6 +83,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
+		free_stack(stack);
 		panic("can't pop an empty stack", line_number);
 	}
 
