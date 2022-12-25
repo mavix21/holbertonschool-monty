@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * push - push int to a stack
+ * push_f - push int to a stack
  * @stack: linked lists for monty stack
  * @line_number: number of line opcode occurs on
  */
-void push(stack_t **stack, unsigned int line_number)
+void push_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 	int arg;
@@ -28,11 +28,11 @@ void push(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pall - print all function
+ * pall_f - print all function
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void pall(stack_t **stack, unsigned int line_number)
+void pall_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top;
 	(void)line_number;
@@ -49,11 +49,11 @@ void pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pint - print int a top of stack
+ * pint_f - print int a top of stack
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void pint(stack_t **stack, unsigned int line_number)
+void pint_f(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
 		panic("can't pint, stack empty", stack, line_number);
@@ -62,11 +62,11 @@ void pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pop - delete item at top of stack
+ * pop_f - delete item at top of stack
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void pop(stack_t **stack, unsigned int line_number)
+void pop_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top_element;
 
@@ -85,11 +85,11 @@ void pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * swap - swap top of stack and second top of stack
+ * swap_f - swap top of stack and second top of stack
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void swap(stack_t **stack, unsigned int line_number)
+void swap_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top_next;
 
