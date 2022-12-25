@@ -81,4 +81,8 @@ void free_stack(stack_t **stack);
 void free_stack_recursive(stack_t *top);
 int is_numeric(char *s);
 
+/* Double Linked List functions */
+void add_stack(stack_t **stack, int n);
+void add_queue(stack_t **stack, int n);
+
 #endif /* end of MONTY_H*/
