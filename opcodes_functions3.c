@@ -114,3 +114,30 @@ void rotl_stack(stack_t **stack, unsigned int line_number)
 	top->next = NULL;
 	last->next = top;
 }
+
+/**
+ * rotr_stack - rotates the stack to the bottom, i.e the last element
+ * of the stack becomes the top element of the stack
+ * @stack: pointer to linked list stack
+ * @line_number: number of line opcode occurs on
+ */
+void rotr_stack(stack_t **stack, unsigned int line_number)
+{
+	stack_t *last;
+	stack_t *top;
+	(void)line_number;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		return;
+
+	top = *stack;
+	last = *stack;
+	while (last->next != NULL)
+		last = last->next;
+
+	top->prev = last;
+	(last->prev)->next = NULL;
+	last->prev = NULL;
+	last->next = top;
+	*stack = last;
+}
