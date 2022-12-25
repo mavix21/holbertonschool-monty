@@ -9,7 +9,7 @@ void stack_f(stack_t **stack, unsigned int line_number)
 	(void)stack;
 	(void)line_number;
 
-	info.data_format = FIFO;
+	info.data_format = LIFO;
 }
 
 /**
