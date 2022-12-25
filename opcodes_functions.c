@@ -14,9 +14,9 @@ void push_f(stack_t **stack, unsigned int line_number)
 
 	arg = atoi(info.arg_str);
 
-	if (info.data_format == FIFO)
+	if (info.data_format == LIFO)
 		add_stack(stack, arg);
-	else
+	else /* FIFO */
 		add_queue(stack, arg);
 }
 
