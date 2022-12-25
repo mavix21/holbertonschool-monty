@@ -21,25 +21,25 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	fp = fopen(argv[1], "r");
 
+	fp = fopen(argv[1], "r");
 	if (fp == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	line_number = 1;
+	info.fp = fp;
 
+	line_number = 1;
 	while (fgets(buf, sizeof(buf), fp) != NULL)
 	{
 		opcode = strtok(buf, " \n");
-
 		if (opcode == NULL || *opcode == '#')
 		{
 			line_number++;
 			continue;
 		}
-		arg_str = strtok(NULL, " \n");
+		info.arg_str = strtok(NULL, " \n");
 		exec_opcode(opcode, &stack, line_number);
 		line_number++;
 	}
