@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * add - adds top of stack and second top of stack
+ * add_f - adds top of stack and second top of stack
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
 
-void add(stack_t **stack, unsigned int line_number)
+void add_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 	stack_t *top;
@@ -34,11 +34,11 @@ void add(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * sub - subtracts top of stack and second top of stack
+ * sub_f - subtracts top of stack and second top of stack
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void sub(stack_t **stack, unsigned int line_number)
+void sub_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 	stack_t *top;
@@ -64,23 +64,23 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * nop - literally does nothing
+ * nop_f - literally does nothing
  * @stack: pointer to the top of the stack
  * @line_number: the index of the current line
  */
-void nop(stack_t **stack, unsigned int line_number)
+void nop_f(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
 }
 
 /**
- * div_stack - divides the second top element of the stack by
+ * div_f - divides the second top element of the stack by
  * the top element of the stack
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void div_stack(stack_t **stack, unsigned int line_number)
+void div_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 	stack_t *top;
@@ -109,12 +109,12 @@ void div_stack(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * mul_stack - multiplies the second top element of the stack by
+ * mul_f - multiplies the second top element of the stack by
  * the top element of the stack
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void mul_stack(stack_t **stack, unsigned int line_number)
+void mul_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 	stack_t *top;
