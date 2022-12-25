@@ -56,23 +56,23 @@ typedef struct instruction_s
 void exec_opcode(char *opcode, stack_t **stack, unsigned int line_number);
 
 /* Opcodes */
-void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
-void pop(stack_t **stack, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
-void add(stack_t **stack, unsigned int line_number);
-void sub(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_number);
-void div_stack(stack_t **stack, unsigned int line_number);
-void mul_stack(stack_t **stack, unsigned int line_number);
-void mod_stack(stack_t **stack, unsigned int line_number);
-void pchar_stack(stack_t **stack, unsigned int line_number);
-void pstr_stack(stack_t **stack, unsigned int line_number);
-void rotl_stack(stack_t **stack, unsigned int line_number);
-void rotr_stack(stack_t **stack, unsigned int line_number);
-void stack(stack_t **stack, unsigned int line_number);
-void queue(stack_t **stack, unsigned int line_number);
+void push_f(stack_t **stack, unsigned int line_number);
+void pall_f(stack_t **stack, unsigned int line_number);
+void pint_f(stack_t **stack, unsigned int line_number);
+void pop_f(stack_t **stack, unsigned int line_number);
+void swap_f(stack_t **stack, unsigned int line_number);
+void add_f(stack_t **stack, unsigned int line_number);
+void sub_f(stack_t **stack, unsigned int line_number);
+void nop_f(stack_t **stack, unsigned int line_number);
+void div_f(stack_t **stack, unsigned int line_number);
+void mul_f(stack_t **stack, unsigned int line_number);
+void mod_f(stack_t **stack, unsigned int line_number);
+void pchar_f(stack_t **stack, unsigned int line_number);
+void pstr_f(stack_t **stack, unsigned int line_number);
+void rotl_f(stack_t **stack, unsigned int line_number);
+void rotr_f(stack_t **stack, unsigned int line_number);
+void stack_f(stack_t **stack, unsigned int line_number);
+void queue_f(stack_t **stack, unsigned int line_number);
 
 /* Helpers */
 void panic(char *err_msg, stack_t **stack, unsigned int line_number);
