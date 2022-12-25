@@ -46,6 +46,7 @@ void add_queue(stack_t **stack, int n)
 		return;
 	}
 
+	last_node = *stack;
 	while (last_node->next != NULL)
 		last_node = last_node->next;
 
