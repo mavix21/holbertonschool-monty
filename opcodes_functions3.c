@@ -12,19 +12,16 @@ void mod_stack(stack_t **stack, unsigned int line_number)
 	stack_t *top;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		panic("can't mod, stack too short", line_number);
+		panic("can't mod, stack too short", stack, line_number);
 
 	new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
+		panic_malloc(stack);
 
 	top = *stack;
 	if (top->n == 0)
-		panic("division by zero", line_number);
+		panic("division by zero", stack, line_number);
 
 	new_node->n = (top->next)->n % top->n;
 	new_node->prev = NULL;
@@ -48,10 +45,10 @@ void pchar_stack(stack_t **stack, unsigned int line_number)
 	char top_char;
 
 	if (*stack == NULL)
-		panic("can't pchar, stack empty", line_number);
+		panic("can't pchar, stack empty", stack, line_number);
 
 	if ((*stack)->n < 0 || (*stack)->n > 127)
-		panic("can't pchar, value out of range", line_number);
+		panic("can't pchar, value out of range", stack, line_number);
 
 	top_char = (*stack)->n;
 
