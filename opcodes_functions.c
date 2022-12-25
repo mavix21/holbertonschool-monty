@@ -7,24 +7,17 @@
  */
 void push_f(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node;
 	int arg;
 
 	if (info.arg_str == NULL || !is_numeric(info.arg_str))
 		panic("usage: push integer", stack, line_number);
 
 	arg = atoi(info.arg_str);
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-		panic_malloc(stack);
 
-	new_node->n = arg;
-	new_node->prev = NULL;
-	new_node->next = *stack;
-	if (*stack != NULL)
-		(*stack)->prev = new_node;
-
-	*stack = new_node;
+	if (info.data_format == FIFO)
+		add_stack(stack, arg);
+	else
+		add_queue(stack, arg);
 }
 
 /**
