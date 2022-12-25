@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * mod_stack - computes the rest of the division of the second
+ * mod_f - computes the rest of the division of the second
  * top element of the stack by the top element of the stack
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void mod_stack(stack_t **stack, unsigned int line_number)
+void mod_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 	stack_t *top;
@@ -35,12 +35,12 @@ void mod_stack(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pchar_stack - prints the char at the top of the stack, followed
+ * pchar_f - prints the char at the top of the stack, followed
  * by a new line
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void pchar_stack(stack_t **stack, unsigned int line_number)
+void pchar_f(stack_t **stack, unsigned int line_number)
 {
 	char top_char;
 
@@ -56,12 +56,12 @@ void pchar_stack(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pstr_stack - prints the string starting at the top of the stack
+ * pstr_f - prints the string starting at the top of the stack
  * followed by a new line
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void pstr_stack(stack_t **stack, unsigned int line_number)
+void pstr_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top;
 	(void)line_number;
@@ -88,13 +88,13 @@ void pstr_stack(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * rotl_stack - rotates the stack to the top, i.e the top element
+ * rotl_f - rotates the stack to the top, i.e the top element
  * of the stack becomes the last one, and the second top element
  * of the stack becomes the first one
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void rotl_stack(stack_t **stack, unsigned int line_number)
+void rotl_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *last;
 	stack_t *top;
@@ -116,12 +116,12 @@ void rotl_stack(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * rotr_stack - rotates the stack to the bottom, i.e the last element
+ * rotr_f - rotates the stack to the bottom, i.e the last element
  * of the stack becomes the top element of the stack
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void rotr_stack(stack_t **stack, unsigned int line_number)
+void rotr_f(stack_t **stack, unsigned int line_number)
 {
 	stack_t *last;
 	stack_t *top;
