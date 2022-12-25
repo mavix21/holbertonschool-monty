@@ -1,12 +1,14 @@
 #include "monty.h"
 
 /**
- * panic - checks if stack exits due to error
+ * panic - closes the monty file, prints given error
+ * message and exits with the status EXIT_FAILURE
  * @err_msg: pointer to print  menssage error
  * @line_number: line to read
  */
 void panic(char *err_msg, unsigned int line_number)
 {
+	fclose(info.fp);
 	fprintf(stderr, "L%u: %s\n", line_number, err_msg);
 	exit(EXIT_FAILURE);
 }
