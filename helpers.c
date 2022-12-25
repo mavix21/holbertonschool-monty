@@ -4,6 +4,7 @@
  * panic - closes the monty file, frees stack, prints given error
  * message and exits with the status EXIT_FAILURE
  * @err_msg: pointer to print  menssage error
+ * @stack: adress of pointer to stack structure
  * @line_number: line to read
  */
 void panic(char *err_msg, stack_t **stack, unsigned int line_number)
@@ -11,6 +12,19 @@ void panic(char *err_msg, stack_t **stack, unsigned int line_number)
 	free_stack(stack);
 	fclose(info.fp);
 	fprintf(stderr, "L%u: %s\n", line_number, err_msg);
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * panic_malloc - closes the monty file, frees stack, prints corresponding
+ * error message and exits with the status EXIT_FAILURE
+ * @stack: adress of pointer to stack structure
+ */
+void panic_malloc(stack_t **stack)
+{
+	free_stack(stack);
+	fclose(info.fp);
+	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
 }
 
