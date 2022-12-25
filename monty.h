@@ -72,7 +72,7 @@ void pstr_stack(stack_t **stack, unsigned int line_number);
 void rotl_stack(stack_t **stack, unsigned int line_number);
 
 /* Helpers */
-void panic(char *err_msg, unsigned int line_number);
+void panic(char *err_msg, stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **stack);
 void free_stack_recursive(stack_t *top);
 int is_numeric(char *s);
