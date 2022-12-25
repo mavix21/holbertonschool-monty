@@ -11,20 +11,12 @@ void push(stack_t **stack, unsigned int line_number)
 	int arg;
 
 	if (info.arg_str == NULL || !is_numeric(info.arg_str))
-	{
-		free_stack(stack);
-		panic("usage: push integer", line_number);
-	}
+		panic("usage: push integer", stack, line_number);
 
 	arg = atoi(info.arg_str);
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
-	{
-		free_stack(stack);
-		fclose(info.fp);
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
+		panic_malloc(stack);
 
 	new_node->n = arg;
 	new_node->prev = NULL;
@@ -64,10 +56,7 @@ void pall(stack_t **stack, unsigned int line_number)
 void pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
-	{
-		free_stack(stack);
-		panic("can't pint, stack empty", line_number);
-	}
+		panic("can't pint, stack empty", stack, line_number);
 
 	printf("%d\n", (*stack)->n);
 }
@@ -82,10 +71,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	stack_t *top_element;
 
 	if (*stack == NULL)
-	{
-		free_stack(stack);
-		panic("can't pop an empty stack", line_number);
-	}
+		panic("can't pop an empty stack", stack, line_number);
 
 	top_element = *stack;
 	*stack = top_element->next;
@@ -108,10 +94,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	stack_t *top_next;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-	{
-		free_stack(stack);
-		panic("can't swap, stack too short", line_number);
-	}
+		panic("can't swap, stack too short", stack, line_number);
 
 	top_next = (*stack)->next;
 	(*stack)->next = top_next->next;
