@@ -11,24 +11,27 @@
 void exec_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 {
 	instruction_t opcodes[] = {
-		{"push", push},
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"sub", sub},
-		{"nop", nop},
-		{"div", div_stack},
-		{"mul", mul_stack},
-		{"mod", mod_stack},
-		{"pchar", pchar_stack},
-		{"pstr", pstr_stack},
-		{"rotl", rotl_stack},
-		{"rotr", rotr_stack},
+		{"push", push_f},
+		{"pall", pall_f},
+		{"pint", pint_f},
+		{"pop", pop_f},
+		{"swap", swap_f},
+		{"add", add_f},
+		{"sub", sub_f},
+		{"nop", nop_f},
+		{"div", div_f},
+		{"mul", mul_f},
+		{"mod", mod_f},
+		{"pchar", pchar_f},
+		{"pstr", pstr_f},
+		{"rotl", rotl_f},
+		{"rotr", rotr_f},
+		{"stack", stack_f},
+		{"queue", queue_f},
 		{NULL, NULL}
 	};
 	int i;
+	char err_msg[256] = {0};
 
 	for (i = 0; opcodes[i].opcode != NULL; i++)
 	{
@@ -39,10 +42,7 @@ void exec_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 		}
 	}
 
+	snprintf(err_msg, sizeof(err_msg), "%s %s", "unknown instruction", opcode);
 	if (opcodes[i].opcode == NULL)
-	{
-		free_stack(stack);
-		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
-		exit(EXIT_FAILURE);
-	}
+		panic(err_msg, stack, line_number);
 }
